@@ -1,0 +1,144 @@
+# Repositories
+https://github.com/comfyanonymous/ComfyUI.git
+  dir=/root
+  out=ComfyUI
+
+https://github.com/ltdrdata/ComfyUI-Manager.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI-Manager
+
+https://github.com/11cafe/comfyui-workspace-manager.git
+  dir=/root/ComfyUI/custom_nodes
+  out=comfyui-workspace-manager
+
+https://github.com/AIGODLIKE/AIGODLIKE-ComfyUI-Translation.git
+  dir=/root/ComfyUI/custom_nodes
+  out=AIGODLIKE-ComfyUI-Translation
+
+https://github.com/crystian/ComfyUI-Crystools.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI-Crystools
+
+https://github.com/crystian/ComfyUI-Crystools-save.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI-Crystools-save
+
+https://github.com/bash-j/mikey_nodes.git
+  dir=/root/ComfyUI/custom_nodes
+  out=mikey_nodes
+
+https://github.com/chrisgoringe/cg-use-everywhere.git
+  dir=/root/ComfyUI/custom_nodes
+  out=cg-use-everywhere
+
+https://github.com/cubiq/ComfyUI_essentials.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI_essentials
+
+https://github.com/jags111/efficiency-nodes-comfyui.git
+  dir=/root/ComfyUI/custom_nodes
+  out=efficiency-nodes-comfyui
+
+https://github.com/kijai/ComfyUI-KJNodes.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI-KJNodes
+
+https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI-Custom-Scripts
+
+https://github.com/rgthree/rgthree-comfy.git
+  dir=/root/ComfyUI/custom_nodes
+  out=rgthree-comfy
+
+https://github.com/shiimizu/ComfyUI_smZNodes.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI_smZNodes
+
+https://github.com/cubiq/ComfyUI_InstantID.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI_InstantID
+
+https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI_IPAdapter_plus
+
+https://github.com/Fannovel16/comfyui_controlnet_aux.git
+  dir=/root/ComfyUI/custom_nodes
+  out=comfyui_controlnet_aux
+
+https://github.com/florestefano1975/comfyui-portrait-master.git
+  dir=/root/ComfyUI/custom_nodes
+  out=comfyui-portrait-master
+
+https://github.com/Gourieff/comfyui-reactor-node.git
+  dir=/root/ComfyUI/custom_nodes
+  out=comfyui-reactor-node
+
+https://github.com/huchenlei/ComfyUI-layerdiffuse.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI-layerdiffuse
+
+https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI-Advanced-ControlNet
+
+https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI-Impact-Pack
+
+https://github.com/ltdrdata/ComfyUI-Inspire-Pack.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI-Inspire-Pack
+
+https://github.com/mcmonkeyprojects/sd-dynamic-thresholding.git
+  dir=/root/ComfyUI/custom_nodes
+  out=sd-dynamic-thresholding
+
+https://github.com/storyicon/comfyui_segment_anything.git
+  dir=/root/ComfyUI/custom_nodes
+  out=comfyui_segment_anything
+
+https://github.com/twri/sdxl_prompt_styler.git
+  dir=/root/ComfyUI/custom_nodes
+  out=sdxl_prompt_styler
+
+https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI-Frame-Interpolation
+
+https://github.com/FizzleDorf/ComfyUI_FizzNodes.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI_FizzNodes
+
+https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI-AnimateDiff-Evolved
+
+https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI-VideoHelperSuite
+
+https://github.com/melMass/comfy_mtb.git
+  dir=/root/ComfyUI/custom_nodes
+  out=comfy_mtb
+
+https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI-AnimateAnyone-Evolved
+
+https://github.com/cubiq/ComfyUI_FaceAnalysis.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI_FaceAnalysis
+
+https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI-WD14-Tagger
+
+https://github.com/SLAPaper/ComfyUI-Image-Selector.git
+  dir=/root/ComfyUI/custom_nodes
+  out=ComfyUI-Image-Selector
+
+https://github.com/WASasquatch/was-node-suite-comfyui.git
+  dir=/root/ComfyUI/custom_nodes
+  out=was-node-suite-comfyui
