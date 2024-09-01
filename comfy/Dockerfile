@@ -24,7 +24,6 @@ RUN --mount=type=cache,target=/var/cache/zypp \
         > /etc/zypp/repos.d/cuda-opensuse15.repo && \
         zypper --gpg-auto-import-keys \
         install --no-confirm --no-recommends --auto-agree-with-licenses \
-        gtk3-tools \
         cuda-cccl-12-4 \
         cuda-command-line-tools-12-4 \
         cuda-compat-12-4 \
@@ -41,39 +40,12 @@ RUN --mount=type=cache,target=/var/cache/zypp \
         libcublas-12-4 \
         libcublas-devel-12-4 \
         libnpp-12-4 \
-        libnpp-devel-12-4 \
-        make \
-        gcc \
-        gcc-c++ \
-        zlib-devel \
-        git  # Install Git here
+        libnpp-devel-12-4
 
-# Install NCCL from source
-WORKDIR /tmp
-RUN git clone https://github.com/NVIDIA/nccl.git && \
-    cd nccl && \
-    make -j$(nproc) src.build && \
-    make pkg.debian.build && \
-    make install
-
-ENV LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/lib:${LD_LIBRARY_PATH}"
-
-# Set environment variables
-ENV PATH="/usr/local/cuda-12.4/bin:${PATH}" \
-    LD_LIBRARY_PATH="/usr/local/cuda-12.4/lib64:${LD_LIBRARY_PATH}:/usr/local/cuda/lib64" \
-    LIBRARY_PATH="/usr/local/cuda-12.4/lib64/stubs:${LIBRARY_PATH}" \
+ENV PATH="${PATH}:/usr/local/cuda-12.4/bin" \
+    LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/local/cuda-12.4/lib64" \
+    LIBRARY_PATH="${LIBRARY_PATH}:/usr/local/cuda-12.4/lib64/stubs" \
     CUDA_HOME="/usr/local/cuda-12.4"
-
-# Install cuDNN
-COPY cudnn-linux-x86_64-8.9.7.29_cuda12-archive.tar.xz /tmp/
-WORKDIR /tmp
-RUN tar -xvf cudnn-linux-x86_64-8.9.7.29_cuda12-archive.tar.xz && \
-    mkdir -p /usr/local/cuda/include /usr/local/cuda/lib64 && \
-    cp -P cudnn-linux-x86_64-8.9.7.29_cuda12-archive/include/* /usr/local/cuda/include/ && \
-    cp -P cudnn-linux-x86_64-8.9.7.29_cuda12-archive/lib/libcudnn* /usr/local/cuda/lib64/ && \
-    chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn* && \
-    ln -s /usr/local/cuda/lib64/libcudnn.so.8 /usr/local/cuda/lib64/libcudnn.so.9 && \
-    rm -rf cudnn-linux-x86_64-8.9.7.29_cuda12-archive cudnn-linux-x86_64-8.9.7.29_cuda12-archive.tar.xz
 
 ################################################################################
 # Python and tools
@@ -130,9 +102,9 @@ RUN --mount=type=cache,target=/var/cache/zypp \
         x265 \
         google-noto-sans-fonts \
         google-noto-sans-cjk-fonts \
-        google-noto-coloremoji-fonts && \
-    rm /usr/lib64/python3.12/EXTERNALLY-MANAGED && \
-    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 100
+        google-noto-coloremoji-fonts \
+            && rm /usr/lib64/python3.12/EXTERNALLY-MANAGED \
+            && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 100
 
 ################################################################################
 # GCC 13 
@@ -141,36 +113,34 @@ RUN --mount=type=cache,target=/var/cache/zypp \
 RUN --mount=type=cache,target=/var/cache/zypp \
     zypper --gpg-auto-import-keys \
         install --no-confirm --auto-agree-with-licenses \
-        gcc13 \
-        gcc13-c++ \
-        cpp13 && \
-    update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-13 90 && \
-    update-alternatives --install /usr/bin/cc  cc  /usr/bin/gcc-13 90 && \
-    update-alternatives --install /usr/bin/cpp cpp /usr/bin/cpp-13 90 && \
-    update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 90 && \
-    update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 90 && \
-    update-alternatives --install /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-13 90 && \
-    update-alternatives --install /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-13 90 && \
-    update-alternatives --install /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-13 90 && \
-    update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-13 90 && \
-    update-alternatives --install /usr/bin/gcov-dump gcov-dump /usr/bin/gcov-dump-13 90 && \
-    update-alternatives --install /usr/bin/gcov-tool gcov-tool /usr/bin/gcov-tool-13 90
+      gcc13 \
+      gcc13-c++ \
+      cpp13 && \
+          update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-13 90 && \
+          update-alternatives --install /usr/bin/cc  cc  /usr/bin/gcc-13 90 && \
+          update-alternatives --install /usr/bin/cpp cpp /usr/bin/cpp-13 90 && \
+          update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 90 && \
+          update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 90 && \
+          update-alternatives --install /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-13 90 && \
+          update-alternatives --install /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-13 90 && \
+          update-alternatives --install /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-13 90 && \
+          update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-13 90 && \
+          update-alternatives --install /usr/bin/gcov-dump gcov-dump /usr/bin/gcov-dump-13 90 && \
+          update-alternatives --install /usr/bin/gcov-tool gcov-tool /usr/bin/gcov-tool-13 90 
 
 ################################################################################
 # Python Packages
 
-# Install PyTorch, xFormers, and other dependencies
+# PyTorch, xFormers
 RUN --mount=type=cache,target=/root/.cache/pip \
-    pip list  && \
-    pip install --no-cache-dir --upgrade pip wheel setuptools && \
-    pip install --no-cache-dir \
-        xformers \
-        torchvision \
-        torchaudio \
+    pip list \
+    && pip install \
+        --upgrade pip wheel setuptools \
+    && pip install \
+        xformers torchvision torchaudio \
         --index-url https://download.pytorch.org/whl/cu124 \
         --extra-index-url https://pypi.org/simple
 
-# Set LD_LIBRARY_PATH for Python packages
 ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}\
 :/usr/lib64/python3.12/site-packages/torch/lib\
 :/usr/lib/python3.12/site-packages/nvidia/cuda_cupti/lib\
@@ -186,18 +156,17 @@ ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}\
 :/usr/lib/python3.12/site-packages/nvidia/nvjitlink/lib\
 :/usr/lib/python3.12/site-packages/nvidia/nvtx/lib"
 
-# Install additional Python packages
-COPY builder-scripts/. /builder-scripts/
+COPY builder-scripts/.  /builder-scripts/
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install --no-cache-dir -r /builder-scripts/pak3.txt && \
-    pip install --no-cache-dir -r /builder-scripts/pak5.txt && \
-    pip install --no-cache-dir -r /builder-scripts/pak7.txt && \
+    pip install  -r /builder-scripts/pak3.txt && \
+    pip install  -r /builder-scripts/pak5.txt && \
+    pip install  -r /builder-scripts/pak7.txt && \
     pip uninstall --break-system-packages --yes onnxruntime-gpu && \
-    pip install --no-cache-dir --break-system-packages \
-    onnxruntime-gpu \
-    --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/ \
-    --extra-index-url https://pypi.org/simple && \
+    pip --no-cache-dir install --break-system-packages \
+        onnxruntime-gpu \
+        --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/ \
+        --extra-index-url https://pypi.org/simple && \
     pip install \
         mediapipe && \
     pip list
