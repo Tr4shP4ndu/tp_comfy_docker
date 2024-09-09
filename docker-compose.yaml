@@ -1,0 +1,27 @@
+x-base_service: &base_service
+  init: true
+  ports:
+    - "8188:8188"
+  stop_signal: SIGKILL
+  tty: true
+  security_opt:
+    - "label=type:nvidia_container_t"
+  deploy:
+    resources:
+      reservations:
+        devices:
+          - driver: nvidia
+            device_ids: ['0']
+            capabilities: [gpu, compute, utility]
+
+services:
+  comfy:
+    <<: *base_service
+    container_name: comfy  # Explicitly set the container name
+    volumes:
+      - "./comfy/storage:/root"
+    profiles: ["comfy"]
+    build: ./comfy/
+    image: "comfy:comfy"
+    environment:
+      - CLI_ARGS=
