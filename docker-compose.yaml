@@ -1,27 +1,39 @@
 x-base_service: &base_service
-  init: true
-  ports:
-    - "8188:8188"
-  stop_signal: SIGKILL
-  tty: true
-  security_opt:
-    - "label=type:nvidia_container_t"
-  deploy:
-    resources:
-      reservations:
-        devices:
-          - driver: nvidia
-            device_ids: ['0']
-            capabilities: [gpu, compute, utility]
+    init: true
+    ports:
+      - "8188:8188"
+    stop_signal: SIGKILL
+    tty: true
+    security_opt:
+      - "label=type:nvidia_container_t"
+    deploy:
+      resources:
+        reservations:
+          devices:
+              - driver: nvidia
+                device_ids: ['0']
+                capabilities: [gpu, compute, utility]
 
 services:
-  comfy:
+  comfy_ubuntu:
     <<: *base_service
-    container_name: comfy  # Explicitly set the container name
+    container_name: comfy_ubuntu
     volumes:
-      - "./comfy/storage:/root"
-    profiles: ["comfy"]
-    build: ./comfy/
+      - "./comfy_ubuntu/storage:/root"
+    profiles: ["comfy_ubuntu"]
+    build: ./comfy_ubuntu/
     image: "comfy:comfy"
     environment:
       - CLI_ARGS=
+
+  comfy_susu:
+    <<: *base_service
+    container_name: comfy_susu
+    volumes:
+      - "./comfy_susu/storage:/root"
+    profiles: ["comfy_susu"]
+    build: ./comfy_susu/
+    image: "comfy:comfy"
+    environment:
+      - CLI_ARGS=
+
