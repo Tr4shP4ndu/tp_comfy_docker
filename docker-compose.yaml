@@ -26,13 +26,13 @@ services:
     environment:
       - CLI_ARGS=
 
-  comfy_susu:
+  comfy_suse:
     <<: *base_service
-    container_name: comfy_susu
+    container_name: comfy_suse
     volumes:
-      - "./comfy_susu/storage:/root"
-    profiles: ["comfy_susu"]
-    build: ./comfy_susu/
+      - "./comfy_suse/storage:/root"
+    profiles: ["comfy_suse"]
+    build: ./comfy_suse/
     image: "comfy:comfy"
     environment:
       - CLI_ARGS=
