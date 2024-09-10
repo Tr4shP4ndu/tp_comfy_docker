@@ -1,8 +1,4 @@
-# 'cupy-cuda12x' for Frame Interpolation
-# 'compel lark' for smZNodes
-# 'torchdiffeq' for DepthFM
-# 'fairscale' for APISR
-accelerate
+
 compel
 cupy-cuda12x
 diffusers

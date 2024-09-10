@@ -5,15 +5,15 @@ A recent project to help anyone be able to quickly start their ComfyUI journey w
 This project is running through several iteractions until we can find a most viable solution in getting the best experience while running ComfyUI in docker.
 
 The current available Docker Images are:
-- OpenSuse docker.io/opensuse/tumbleweed:latest
-- Ubuntu nvidia/cuda:12.6.1-cudnn-devel-ubuntu24.04
-
-Unfortunatly, OpenSuse is no longer working and at the moment trying to shift things to use Ubuntu with Nvidia Cuda and CuDnn
+- OpenSuse docker.io/opensuse/tumbleweed:latest - Depricated
+- Download bash:alpine3.20
+- PyTorch pytorch/pytorch:2.4.1-cuda11.8-cudnn9-runtime
 
 Quick start
 ```docker
-docker compose --profile comfy_suse up --build // Depricated
+docker compose --profile download up --build // to download all the models and custom nodes
+[This will take an enormous amount of time due to the fact it''s download all the necessary models plus custom nodes]
 
-docker compose --profile comfy_ubuntu up --build //Testing
+docker compose --profile comfy up --build // Clones ComfyUI, install all the dependecies and start's it
 ```
 

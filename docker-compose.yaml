@@ -1,11 +1,11 @@
 x-base_service: &base_service
     init: true
     ports:
-      - "8188:8188"
+      - "${WEBUI_PORT:-7860}:7860"
+    volumes:
+      - &v1 ./data:/data
     stop_signal: SIGKILL
     tty: true
-    security_opt:
-      - "label=type:nvidia_container_t"
     deploy:
       resources:
         reservations:
@@ -15,25 +15,20 @@ x-base_service: &base_service
                 capabilities: [gpu, compute, utility]
 
 services:
-  comfy_ubuntu:
-    <<: *base_service
-    container_name: comfy_ubuntu
+  download:
+    container_name: download
     volumes:
-      - "./comfy_ubuntu/storage:/root"
-    profiles: ["comfy_ubuntu"]
-    build: ./comfy_ubuntu/
+      - *v1
+    profiles: ["download"]
+    build: ./services/download/
+
+  comfy_suse:
+    <<: *base_service
+    container_name: comfy
+    profiles: ["comfy"]
+    build: ./services/comfy/
     image: "comfy:comfy"
     environment:
       - CLI_ARGS=
 
-  comfy_suse:
-    <<: *base_service
-    container_name: comfy_suse
-    volumes:
-      - "./comfy_suse/storage:/root"
-    profiles: ["comfy_suse"]
-    build: ./comfy_suse/
-    image: "comfy:comfy"
-    environment:
-      - CLI_ARGS=
 

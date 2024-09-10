@@ -1,0 +1,52 @@
+#Workspace
+https://github.com/ltdrdata/ComfyUI-Manager.git out=ComfyUI-Manager
+https://github.com/11cafe/comfyui-workspace-manager.git out=ComfyUI-Workspace-Manager
+https://github.com/AIGODLIKE/AIGODLIKE-ComfyUI-Translation.git out=ComfyUI-AIGodLike-Translation
+https://github.com/crystian/ComfyUI-Crystools.git out=ComfyUI-Crystools
+https://github.com/crystian/ComfyUI-Crystools-save.git out=ComfyUI-Crystools-save
+https://github.com/giriss/comfy-image-saver.git out=ComfyUI-Image-Saver
+
+#General
+https://github.com/bash-j/mikey_nodes.git out=ComfyUI-Mikey-Nodes
+https://github.com/chrisgoringe/cg-use-everywhere.git out=ComfyUI-CG-Use-Everywhere
+https://github.com/cubiq/ComfyUI_essentials.git out=ComfyUI-Essentials
+https://github.com/jags111/efficiency-nodes-comfyui.git out=ComfyUI-Efficiency-Nodes
+https://github.com/kijai/ComfyUI-KJNodes.git out=ComfyUI-KJNodes
+https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git out=ComfyUI-Custom-Scripts
+https://github.com/rgthree/rgthree-comfy.git out=ComfyUI-RGThree-Nodes
+https://github.com/shiimizu/ComfyUI_smZNodes.git out=ComfyUI-SMZ-Nodes
+https://github.com/GTSuya-Studio/ComfyUI-Gtsuya-Nodes.git out=ComfyUI-Gtsuya-Nodes
+https://github.com/daxcay/ComfyUI-JDCN.git out=ComfyUI-JDCN
+https://github.com/filliptm/ComfyUI_Fill-Nodes.git out=ComfyUI-Fill-Nodes
+https://github.com/aria1th/ComfyUI-LogicUtils.git out=ComfyUI-LogicUtils
+
+#Control
+https://github.com/cubiq/ComfyUI_InstantID.git out=ComfyUI-Instant-ID
+https://github.com/cubiq/ComfyUI_IPAdapter_plus.git out=ComfyUI-IPAdapter-Plus
+https://github.com/Fannovel16/comfyui_controlnet_aux.git out=ComfyUI-ControlNet-Aux
+https://github.com/florestefano1975/comfyui-portrait-master.git out=ComfyUI-Portrait-master
+https://github.com/Gourieff/comfyui-reactor-node.git out=ComfyUI-Reactor-Node
+https://github.com/huchenlei/ComfyUI-layerdiffuse.git out=ComfyUI-Layer-Diffuse
+https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet.git out=ComfyUI-Advanced-ControlNet
+https://github.com/ltdrdata/ComfyUI-Impact-Pack.git out=ComfyUI-Impact-Pack
+https://github.com/ltdrdata/ComfyUI-Inspire-Pack.git out=ComfyUI-Inspire-Pack
+https://github.com/mcmonkeyprojects/sd-dynamic-thresholding.git out=ComfyUI-SD-Dynamic-Thresholding
+https://github.com/storyicon/comfyui_segment_anything.git out=ComfyUI-Segment-Anything
+https://github.com/twri/sdxl_prompt_styler.git out=ComfyUI-Prompt-Styler
+https://github.com/KoreTeknology/ComfyUI-Universal-Styler.git out=ComfyUI-Universal-Styler
+
+# Video
+https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git out=ComfyUI-Frame-Interpolation
+https://github.com/FizzleDorf/ComfyUI_FizzNodes.git out=ComfyUI-Fizz-Nodes
+https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git out=ComfyUI-AnimateDiff-Evolved
+https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git out=ComfyUI-VideoHelperSuite
+https://github.com/melMass/comfy_mtb.git out=ComfyUI-MTB
+https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved.git out=ComfyUI-AnimateAnyone-Evolved
+
+# More
+https://github.com/cubiq/ComfyUI_FaceAnalysis.git out=ComfyUI-FaceAnalysis
+https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git out=ComfyUI-WD14-Tagger
+https://github.com/SLAPaper/ComfyUI-Image-Selector.git out=ComfyUI-Image-Selector
+
+# WAS NS' deps were not fully installed, but it can still run, and have most features enabled
+https://github.com/WASasquatch/was-node-suite-comfyui.git out=ComfyUI-Was-Node-Suite
