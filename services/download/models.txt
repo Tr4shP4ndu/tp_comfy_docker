@@ -1,18 +1,22 @@
 # Checkpoints
 
-https://huggingface.co/Comfy-Org/flux1-schnell/resolve/main/flux1-schnell-fp8.safetensors
-  out=checkpoints/flux1-schnell-fp8.safetensors
 https://huggingface.co/playgroundai/playground-v2.5-1024px-aesthetic/resolve/main/playground-v2.5-1024px-aesthetic.fp16.safetensors
   out=checkpoints/playground-v2.5-1024px-aesthetic.fp16.safetensors
 https://huggingface.co/stabilityai/sdxl-turbo/resolve/main/sd_xl_turbo_1.0_fp16.safetensors
   out=checkpoints/sd_xl_turbo_1.0_fp16.safetensors
 https://huggingface.co/LarryAIDraw/v1-5-pruned-emaonly/resolve/main/v1-5-pruned-emaonly.ckpt
   out=checkpoints/v1-5-pruned-emaonly.ckpt
+https://huggingface.co/autismanon/modeldump/resolve/main/dreamshaper_8.safetensors
+  out=checkpoints/dreamshaper_8.safetensors
 
 # VAE
 
 https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors
   out=vae/vae-ft-mse-840000-ema-pruned.safetensors
+https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/vae/diffusion_pytorch_model.safetensors
+  out=vae/diffusion_pytorch_model.safetensors
+https://huggingface.co/black-forest-labs/FLUX.1-schnell/blob/main/ae.safetensors
+  out=vae/ae.safetensors
 https://huggingface.co/madebyollin/taesd/resolve/main/taesd_decoder.safetensors
   out=vae_approx/taesd_decoder.safetensors
 https://huggingface.co/madebyollin/taesdxl/resolve/main/taesdxl_decoder.safetensors
@@ -49,6 +53,14 @@ https://huggingface.co/datasets/gsdf/EasyNegative/resolve/main/EasyNegative.safe
   out=embeddings/easynegative.safetensors
 https://huggingface.co/lenML/DeepNegative/resolve/main/NG_DeepNegative_V1_75T.pt
   out=embeddings/ng_deepnegative_v1_75t.pt
+
+# CLIP
+https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors
+  out=clip/clip_l.safetensors
+https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors
+  out=clip/t5xxl_fp16.safetensors
+https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp8_e4m3fn.safetensors
+  out=clip/t5xxl_fp8_e4m3fn.safetensors
 
 # CLIP Vision
 
@@ -131,3 +143,10 @@ https://huggingface.co/conrevo/AnimateDiff-A1111/resolve/main/motion_module/anim
   out=animatediff_models/mm_sd15_v2.safetensors
 https://huggingface.co/conrevo/AnimateDiff-A1111/resolve/main/motion_module/animatediff_models/mm_sd15_v3.safetensors
   out=animatediff_models/mm_sd15_v3.safetensors
+
+# UNET
+
+https://huggingface.co/Comfy-Org/flux1-schnell/resolve/main/flux1-schnell-fp8.safetensors
+  out=unet/flux1-schnell-fp8.safetensors
+https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors?download=true
+  out=unet/flux1-dev.safetensors
