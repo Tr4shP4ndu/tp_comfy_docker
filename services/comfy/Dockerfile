@@ -2,7 +2,7 @@ FROM pytorch/pytorch:2.4.1-cuda11.8-cudnn9-runtime
 
 ENV DEBIAN_FRONTEND=noninteractive PIP_PREFER_BINARY=1
 
-# Install system dependencies
+# Install system dependencies and Python 3.12
 RUN apt-get update && \
     apt-get install -y \
     git \
@@ -10,9 +10,23 @@ RUN apt-get update && \
     libglib2.0-0 \
     libsm6 \
     libxext6 \
-    libxrender-dev && \
+    libxrender-dev \
+    wget \
+    software-properties-common && \
+    add-apt-repository ppa:deadsnakes/ppa && \
+    apt-get update && \
+    apt-get install -y python3.12 python3.12-distutils python3.12-venv && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+# Update alternatives to make Python 3.12 the default
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1 && \
+    update-alternatives --set python3 /usr/bin/python3.12
+
+# Install pip for Python 3.12
+RUN wget https://bootstrap.pypa.io/get-pip.py && \
+    python3 get-pip.py && \
+    rm get-pip.py
 
 # Set environment variables
 ENV ROOT=/comfy
@@ -37,6 +51,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 # Set working directory /stable-diffusion
 WORKDIR ${ROOT}
+
 # Copy other required files
 COPY . /docker/
 
