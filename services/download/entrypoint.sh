@@ -49,6 +49,7 @@ clone_or_pull https://github.com/kijai/ComfyUI-Geowizard.git
 clone_or_pull https://github.com/kijai/ComfyUI-Marigold.git
 clone_or_pull https://github.com/picturesonpictures/comfy_PoP.git
 clone_or_pull https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes.git
+clone_or_pull https://github.com/sipherxyz/comfyui-art-venture.git
 
 # Control
 clone_or_pull https://github.com/cubiq/ComfyUI_InstantID.git

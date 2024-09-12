@@ -169,6 +169,7 @@ This setup also includes several custom nodes, some of which may have workaround
 - **ComfyUI-Marigold**
 - **comfy_PoP**
 - **Derfuu_ComfyUI_ModdedNodes**
+- **ComfyUI Art-Venture**
 
 ### Control Nodes
 
