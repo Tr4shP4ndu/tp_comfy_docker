@@ -65,6 +65,8 @@ clone_or_pull https://github.com/mcmonkeyprojects/sd-dynamic-thresholding.git
 clone_or_pull https://github.com/storyicon/comfyui_segment_anything.git
 clone_or_pull https://github.com/twri/sdxl_prompt_styler.git
 clone_or_pull https://github.com/KoreTeknology/ComfyUI-Universal-Styler.git
+clone_or_pull https://github.com/kijai/ComfyUI-Florence2.git
+clone_or_pull https://github.com/un-seen/comfyui-tensorops.git
 
 # Video
 clone_or_pull https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git
