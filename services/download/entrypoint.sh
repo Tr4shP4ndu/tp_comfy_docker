@@ -3,7 +3,7 @@
 set -Eeuo pipefail
 
 # Create necessary directories
-mkdir -vp /data/{config,workspaces,input,custom_nodes,output,models/{checkpoints,clip,clip_vision,configs,diffusers,diffusion_models,embeddings,gligen,hypernetworks,loras,photomaker,style_models,unet,upscale_models,vae,vae_approx}}
+mkdir -vp /data/{config,workspaces,input,custom_nodes,output,models/{checkpoints,clip,clip_vision,configs,diffusers,diffusion_models,embeddings,gligen,hypernetworks,loras,photomaker,style_models,unet,upscale_models,vae,vae_approx, sam2, animatediff_models, animatediff_motion_lora, mmdets, onnx}}
 
 function clone_or_pull () {
     if [[ $1 =~ ^(.*[/:])(.*)(\.git)$ ]] || [[ $1 =~ ^(http.*\/)(.*)$ ]]; then
@@ -38,7 +38,7 @@ clone_or_pull https://github.com/cubiq/ComfyUI_essentials.git
 clone_or_pull https://github.com/jags111/efficiency-nodes-comfyui.git
 clone_or_pull https://github.com/kijai/ComfyUI-KJNodes.git
 clone_or_pull https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
-clone_or_pull https://github.com/rgthree/rgthree-comfy.git
+# clone_or_pull https://github.com/rgthree/rgthree-comfy.git
 clone_or_pull https://github.com/shiimizu/ComfyUI_smZNodes.git
 clone_or_pull https://github.com/GTSuya-Studio/ComfyUI-Gtsuya-Nodes.git
 clone_or_pull https://github.com/daxcay/ComfyUI-JDCN.git
@@ -78,9 +78,10 @@ clone_or_pull https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved.git
 clone_or_pull https://github.com/cubiq/ComfyUI_FaceAnalysis.git
 clone_or_pull https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 clone_or_pull https://github.com/SLAPaper/ComfyUI-Image-Selector.git
+clone_or_pull https://github.com/kijai/ComfyUI-segment-anything-2.git
 
 # WAS NS' deps were not fully installed, but it can still run, and have most features enabled
-clone_or_pull https://github.com/WASasquatch/was-node-suite-comfyui.git
+# clone_or_pull https://github.com/WASasquatch/was-node-suite-comfyui.git
 
 # Download files for /data/models
 [[ -f /docker/models.txt ]] && aria2c -x 10 --disable-ipv6 --input-file /docker/models.txt --dir /data/models --continue

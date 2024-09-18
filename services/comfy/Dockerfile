@@ -49,7 +49,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
       insightface \
       numba
 
-# Set working directory /stable-diffusion
+# Set working directory /comfy
 WORKDIR ${ROOT}
 
 # Copy other required files

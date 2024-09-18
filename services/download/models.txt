@@ -126,15 +126,15 @@ https://huggingface.co/guoyww/animatediff/resolve/cd71ae134a27ec6008b968d6419952
 https://huggingface.co/guoyww/animatediff/resolve/cd71ae134a27ec6008b968d6419952b0c0494cf2/animatediff_models/mm_sd_v15_v2.ckpt
   out=animatediff_models/mm_sd_v15_v2.ckpt
 https://huggingface.co/guoyww/animatediff/resolve/cd71ae134a27ec6008b968d6419952b0c0494cf2/v3_sd15_animatediff_models/mm.ckpt
-  out=v3_sd15_animatediff_models/mm.ckpt
+  out=animatediff_models//mm.ckpt
 https://huggingface.co/manshoety/AD_Stabilized_Motion/resolve/main/animatediff_models/mm-Stabilized_mid.pth
   out=animatediff_models/mm-Stabilized_mid.pth
 https://huggingface.co/manshoety/AD_Stabilized_Motion/resolve/main/animatediff_models/mm-Stabilized_high.pth
   out=animatediff_models/mm-Stabilized_high.pth
 https://huggingface.co/CiaraRowles/TemporalDiff/resolve/main/temporaldiff-v1-animatediff.safetensors
-  out=temporaldiff-v1-animatediff.safetensors
+  out=animatediff_models/temporaldiff-v1-animatediff.safetensors
 https://huggingface.co/CiaraRowles/TemporalDiff/resolve/main/temporaldiff-v1-animatediff.ckpt
-  out=temporaldiff-v1-animatediff.ckpt
+  out=animatediff_models/temporaldiff-v1-animatediff.ckpt
 https://huggingface.co/conrevo/AnimateDiff-A1111/resolve/main/motion_module/animatediff_models/mm_sdxl_hs.safetensors
   out=animatediff_models/mm_sdxl_hs.safetensors
 https://huggingface.co/conrevo/AnimateDiff-A1111/resolve/main/motion_module/animatediff_models/mm_sdxl_v10_beta.safetensors
@@ -150,3 +150,14 @@ https://huggingface.co/Comfy-Org/flux1-schnell/resolve/main/flux1-schnell-fp8.sa
   out=unet/flux1-schnell-fp8.safetensors
 https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors?download=true
   out=unet/flux1-dev.safetensors
+
+# SAM2
+
+https://huggingface.co/Kijai/sam2-safetensors/resolve/main/sam2_hiera_base_plus.safetensors
+  out=sam2/sam2_hiera_base_plus.safetensors
+https://huggingface.co/Kijai/sam2-safetensors/resolve/main/sam2_hiera_large.safetensors
+  out=sam2/sam2_hiera_large.safetensors
+https://huggingface.co/Kijai/sam2-safetensors/resolve/main/sam2_hiera_small.safetensors
+  out=sam2/sam2_hiera_small.safetensors
+https://huggingface.co/Kijai/sam2-safetensors/resolve/main/sam2_hiera_tiny.safetensors
+  out=unet/sam2_hiera_tiny.safetensors
