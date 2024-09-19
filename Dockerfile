@@ -64,11 +64,11 @@ RUN curl -sS https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py \
 RUN python3.12 -m pip install --upgrade pip setuptools
 
 # Install PyTorch and torchvision
-RUN pip install --no-cache-dir \
-    torch==2.0.0+cu12.1 \
-    torchvision==0.15.0+cu12.1 \
-    torchaudio==2.0.1+cu12.1 \
-    -f https://download.pytorch.org/whl/cu12.1/torch_stable.html
+RUN pip3 install --no-cache-dir \
+    torch \
+    torchvision \
+    torchaudio \
+    -f https://download.pytorch.org/whl/cu124
 
 # # Optional: Install Python packages from a requirements file
 # COPY requirements.txt /tmp/requirements.txt
