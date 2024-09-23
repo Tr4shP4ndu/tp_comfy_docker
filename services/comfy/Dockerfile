@@ -11,11 +11,6 @@ RUN apt-get update && \
     libsm6 \
     libxext6 \
     libxrender-dev \
-    python3-opencv \
-    libmupdf-dev \
-    mupdf \
-    mupdf-tools \
-    libglib2.0-0 \
     wget \
     software-properties-common && \
     add-apt-repository ppa:deadsnakes/ppa && \
@@ -50,9 +45,6 @@ RUN --mount=type=cache,target=/root/.cache/pip \
       matplotlib \
       numexpr \
       omegaconf \
-      frontend \
-      PyOpenGL-accelerate \
-      ffmpeg \
       dlib \
       insightface \
       numba

@@ -33,6 +33,7 @@ insightface
 jaxtyping
 joblib
 kornia
+kornia
 lark
 librosa
 matplotlib
@@ -121,4 +122,3 @@ ultralytics
 xatlas
 yacs
 yapf
-pykalman
